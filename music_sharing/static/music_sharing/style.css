@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.upload-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.upload-form form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-form input[type="file"] {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 20%;
+}
+
+.upload-form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.upload-form button:hover {
+  background-color: #444;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-list li {
+  background-color: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.file-list li:last-child {
+  border-bottom: none;
+}
+
+.file-name {
+  flex: 1;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.file-size {
+  font-size: 0.8rem;
+  margin-right: 10px;
+  color: #666;
+}
+
+.error {
+  width: 20%;
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error img {
+  width: 25px;
+  height: 25px;
+}

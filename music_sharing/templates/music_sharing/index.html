@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'music_sharing/style.css' %}" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'music_sharing/media/favicon.png' %}" >
+    <title>SoundMedia</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SoundMedia</h1>
+        </div>
+        <div class="upload-form">
+            <h2>Upload Files</h2>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" accept="audio/mpeg, audio/ogg, audio/wav" name="file">
+                <button type="submit">Upload</button>
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}><img src="{% static 'music_sharing/media/error-file.png' %}" alt="image">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <ul class="file-list">
+            {% for file in files %}
+                <li>
+                    <span class="file-name">{{ file.name }}</span>
+                    <span class="file-size">{{ file.size }}</span>
+                    <audio controls>
+                        <source src="{{ file.url }}" type="{{ file.content_type }}">
+                        Your browser does not support the audio element.
+                    </audio>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
